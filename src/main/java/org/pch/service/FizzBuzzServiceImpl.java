@@ -5,7 +5,9 @@ import com.google.common.primitives.Ints;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -22,11 +24,13 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
 
   @Override
   public List<String> calculateFizzBuzz(List<String> messages) {
-    return messages
-        .stream()
-        .map(message -> processRules(Ints.tryParse(message)))
-        .filter(result -> !result.isEmpty())
-        .collect(Collectors.toList());
+    return Optional.ofNullable(messages)
+        .map(msgs ->
+                msgs.stream()
+                    .map(message -> processRules(Ints.tryParse(message)))
+                    .filter(result -> !result.isEmpty())
+                    .collect(Collectors.toList())
+        ).orElse(Collections.emptyList());
   }
 
   @Override

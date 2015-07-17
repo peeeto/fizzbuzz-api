@@ -8,14 +8,17 @@ import java.util.List;
  * Created by petercho on 17/07/15.
  */
 public class FizzBuzzReq {
-  private final List<String> values;
+  private List<String> numbers;
 
-  public FizzBuzzReq(List<String> values) {
-    this.values = values;
+  FizzBuzzReq() {
   }
 
-  public List<String> getValues() {
-    return values;
+  public FizzBuzzReq(List<String> numbers) {
+    this.numbers = numbers;
+  }
+
+  public List<String> getNumbers() {
+    return numbers;
   }
 
 }
