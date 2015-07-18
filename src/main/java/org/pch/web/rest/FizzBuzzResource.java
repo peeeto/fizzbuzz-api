@@ -27,7 +27,7 @@ public class FizzBuzzResource {
   }
 
   @RequestMapping(value = REQUEST_FIZZBUZZ, method = RequestMethod.GET)
-  public ResponseEntity<FizzBuzzRes> fizzbuzzGet(@RequestParam(value = "numbers") String numbers) {
+  public ResponseEntity<FizzBuzzRes> fizzbuzzGet(@RequestParam(value = "numbers", defaultValue = "") String numbers) {
     FizzBuzzRes res = new FizzBuzzRes(fizzBuzzService.calculateFizzBuzz(numbers));
     return new ResponseEntity<>(res, HttpStatus.CREATED);
   }
