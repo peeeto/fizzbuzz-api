@@ -22,7 +22,7 @@
 >
 >curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
 
-## start remote
+## start cloudfoundry remote
 >cf login -a https://api.run.pivotal.io
 >
 >Email: p xxx z
@@ -32,6 +32,13 @@
 >cf push fizzbuzz-api -p target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
 >
 >cf apps
+
+## start beanstalkapp remote
+>git push beanstalk master
+>
+>Username for 'https://peeeto.git.beanstalkapp.com': p xxx r
+>
+>Password for 'https://peter@peeeto.git.beanstalkapp.com':
 
 ## test remote
 >export URL="http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz"
