@@ -26,15 +26,16 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
 
   @Override
   public List<String> calculateFizzBuzz(List<String> messages) {
-    log.debug("calculateFizzBuzz - messages: " + messages);
-
-    return Optional.ofNullable(messages)
+    log.debug("calculateFizzBuzz - messages: {}", messages);
+    List<String> results = Optional.ofNullable(messages)
         .map(msgs ->
                 msgs.stream()
-                    .map(message -> processRules(Ints.tryParse(message)))
-                    .filter(result -> !result.isEmpty())
+                    .map(msg -> processRules(Ints.tryParse(msg)))
+                    .filter(res -> !res.isEmpty())
                     .collect(Collectors.toList())
         ).orElse(Collections.emptyList());
+    log.debug("calculateFizzBuzz - results: {}", results);
+    return results;
   }
 
   @Override

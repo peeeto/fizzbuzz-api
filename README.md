@@ -23,6 +23,12 @@
 >curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
 
 ## start remote
+>cf login -a https://api.run.pivotal.io
+>
+>Email: p xxx z
+>
+>Password: ••••••••
+>
 >cf push fizzbuzz-api -p target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
 >
 >cf apps
@@ -37,3 +43,5 @@
 >curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","15","22","333","4444"]}' "${URL}"
 >
 >curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
+
+https://travis-ci.org/peeeto/fizzbuzz-api.svg
