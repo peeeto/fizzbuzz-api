@@ -18,11 +18,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * TODO: short description
- * <p/>
- * Created by petercho on 08/07/15.
- */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
