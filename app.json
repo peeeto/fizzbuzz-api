@@ -1,0 +1,13 @@
+{
+  "name":"fizzbuzz-api",
+  "scripts":{},
+  "env":{
+    "JAVA_OPTS":{
+      "required":true
+    },
+    "java.runtime.version":{
+      "required":true
+    }
+  },
+  "addons":[]
+}
