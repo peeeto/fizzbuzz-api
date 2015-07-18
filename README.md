@@ -10,17 +10,19 @@
 >mvn spring-boot:run
 >
 >java -jar target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
+>
+>PORT=8080 foreman start
 
-## test local
->export URL="http://localhost:8080/fizzbuzz-api/fizzbuzz"
+## start heroku remote
+>heroku login
 >
->curl "${URL}?numbers=1,2;33|444"
+>git push heroku master
 >
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":[1,15,22,333,4444]}' "${URL}"
+>heroku logs --tail --app fizzbuzz-api
 >
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","15","22","333","4444"]}' "${URL}"
+>heroku ps:scale web=1 --app fizzbuzz-api
 >
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
+>heroku ps --app fizzbuzz-api
 
 ## start cloudfoundry remote
 >cf login -a https://api.run.pivotal.io
@@ -33,22 +35,9 @@
 >
 >cf apps
 
-## start beanstalkapp remote
->git push beanstalk master
->
->Username for 'https://peeeto.git.beanstalkapp.com': p xxx r
->
->Password for 'https://peter@peeeto.git.beanstalkapp.com':
+## run test
+> bash -x src/test/scripts/test.sh
 
-## test remote
->export URL="http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz"
->
->curl "${URL}?numbers=1,2;33|444"
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":[1,15,22,333,4444]}' "${URL}"
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","15","22","333","4444"]}' "${URL}"
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
+[![codeship - fizzbuzz-api](https://codeship.com/projects/12a96f00-0f9d-0133-d4b2-1e6fe7bb1028/status?branch=master)]
 
-https://travis-ci.org/peeeto/fizzbuzz-api.svg
+[![Heroku](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&style=flat)]
