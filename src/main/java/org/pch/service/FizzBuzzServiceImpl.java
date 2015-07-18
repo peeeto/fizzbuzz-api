@@ -22,7 +22,7 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
   public static final int FIZZ_DIVIDER = 3;
   public static final int BUZZ_DIVIDER = 5;
 
-  public static final Pattern PATTERN = Pattern.compile(",|;|\\|");
+  public static final Pattern NUMBERS_PATTERN = Pattern.compile(",|;|\\|");
 
   @Override
   public List<String> calculateFizzBuzz(List<String> messages) {
@@ -40,7 +40,7 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
 
   @Override
   public List<String> calculateFizzBuzz(String numbers) {
-    String[] nums = PATTERN.split(Strings.nullToEmpty(numbers));
+    String[] nums = NUMBERS_PATTERN.split(Strings.nullToEmpty(numbers));
     return calculateFizzBuzz(Arrays.asList(nums));
   }
 

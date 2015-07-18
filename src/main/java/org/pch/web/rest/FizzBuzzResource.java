@@ -18,20 +18,20 @@ public class FizzBuzzResource {
   private FizzBuzzService fizzBuzzService;
 
   @RequestMapping(value = REQUEST_FIZZBUZZ, method = RequestMethod.POST)
-  public ResponseEntity<FizzBuzzRes> fizzbuzzPost(@RequestBody FizzBuzzReq message) {
+  public ResponseEntity<FizzBuzzRes> fizzBuzzPost(@RequestBody FizzBuzzReq message) {
     FizzBuzzRes res = new FizzBuzzRes(fizzBuzzService.calculateFizzBuzz(message.getNumbers()));
     return new ResponseEntity<>(res, HttpStatus.CREATED);
   }
 
   @RequestMapping(value = REQUEST_FIZZBUZZ, method = RequestMethod.GET)
-  public ResponseEntity<FizzBuzzRes> fizzbuzzGet(@RequestParam(value = "numbers", defaultValue = "") String numbers) {
+  public ResponseEntity<FizzBuzzRes> fizzBuzzGet(@RequestParam(value = "numbers", defaultValue = "") String numbers) {
     FizzBuzzRes res = new FizzBuzzRes(fizzBuzzService.calculateFizzBuzz(numbers));
     return new ResponseEntity<>(res, HttpStatus.OK);
   }
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public ResponseEntity<FizzBuzzRes> root() {
-    return fizzbuzzGet(null);
+    return fizzBuzzGet(null);
   }
 
 }

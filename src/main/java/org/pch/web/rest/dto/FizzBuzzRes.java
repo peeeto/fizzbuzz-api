@@ -3,13 +3,13 @@ package org.pch.web.rest.dto;
 import java.util.List;
 
 public class FizzBuzzRes {
-  private final List<String> fizzbuzz;
+  private final List<String> fizzBuzz;
 
-  public FizzBuzzRes(List<String> fizzbuzz) {
-    this.fizzbuzz = fizzbuzz;
+  public FizzBuzzRes(List<String> fizzBuzz) {
+    this.fizzBuzz = fizzBuzz;
   }
 
-  public List<String> getFizzbuzz() {
-    return fizzbuzz;
+  public List<String> getFizzBuzz() {
+    return fizzBuzz;
   }
 }
