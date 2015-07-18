@@ -1,10 +1,39 @@
 # fizzbuzz-api
 
->curl http://localhost:8080/fizzbuzz-api/fizzbuzz?numbers=1,2;33|444
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":[1,22,333,4444]}' http://localhost:8080/fizzbuzz-api/fizzbuzz
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","22","333","4444"]}' http://localhost:8080/fizzbuzz-api/fizzbuzz
->
->curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",2,"33",444]}' http://localhost:8080/fizzbuzz-api/fizzbuzz
+## clone 
+>git clone https://github.com/peeeto/fizzbuzz-api.git
 
+## build locally
+>mvn clean install
+
+## start local
+>mvn spring-boot:run
+>
+>java -jar target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
+
+## test local
+>export URL="http://localhost:8080/fizzbuzz-api/fizzbuzz"
+>
+>curl "${URL}?numbers=1,2;33|444"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":[1,15,22,333,4444]}' "${URL}"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","15","22","333","4444"]}' "${URL}"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"
+
+## start remote
+>cf push fizzbuzz-api -p target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
+>
+>cf apps
+
+## test remote
+>export URL="http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz"
+>
+>curl "${URL}?numbers=1,2;33|444"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":[1,15,22,333,4444]}' "${URL}"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1","15","22","333","4444"]}' "${URL}"
+>
+>curl -XPOST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Accept-Language: en' -d '{"numbers":["1",15, 2,"33",444]}' "${URL}"

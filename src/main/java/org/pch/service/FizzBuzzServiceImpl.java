@@ -2,6 +2,7 @@ package org.pch.service;
 
 import com.google.common.base.Strings;
 import com.google.common.primitives.Ints;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class FizzBuzzServiceImpl implements FizzBuzzService {
 
@@ -24,6 +26,8 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
 
   @Override
   public List<String> calculateFizzBuzz(List<String> messages) {
+    log.debug("calculateFizzBuzz - messages: " + messages);
+
     return Optional.ofNullable(messages)
         .map(msgs ->
                 msgs.stream()

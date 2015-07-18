@@ -1,5 +1,6 @@
 package org.pch.web.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.pch.service", "org.pch.web"})
+@Slf4j
 public class Application extends SpringBootServletInitializer {
 
   public static void main(String[] args) {
