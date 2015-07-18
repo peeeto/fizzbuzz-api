@@ -8,23 +8,33 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @RestController
-@RequestMapping(value = "/fizzbuzz-api")
+@RequestMapping(value = "/")
 public class FizzBuzzResource {
+
+  public static final String REQUEST_FIZZBUZZ = "/fizzbuzz-api/fizzbuzz";
 
   @Autowired
   private FizzBuzzService fizzBuzzService;
 
-  @RequestMapping(value = "/fizzbuzz", method = RequestMethod.POST)
+  @RequestMapping(value = REQUEST_FIZZBUZZ, method = RequestMethod.POST)
   public ResponseEntity<FizzBuzzRes> fizzbuzzPost(@RequestBody FizzBuzzReq message) {
     FizzBuzzRes res = new FizzBuzzRes(fizzBuzzService.calculateFizzBuzz(message.getNumbers()));
     return new ResponseEntity<>(res, HttpStatus.CREATED);
   }
 
-  @RequestMapping(value = "/fizzbuzz", method = RequestMethod.GET)
+  @RequestMapping(value = REQUEST_FIZZBUZZ, method = RequestMethod.GET)
   public ResponseEntity<FizzBuzzRes> fizzbuzzGet(@RequestParam(value = "numbers") String numbers) {
     FizzBuzzRes res = new FizzBuzzRes(fizzBuzzService.calculateFizzBuzz(numbers));
     return new ResponseEntity<>(res, HttpStatus.CREATED);
+  }
+
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public void root(HttpServletResponse response) throws IOException {
+    response.sendRedirect(REQUEST_FIZZBUZZ);
   }
 
 }
