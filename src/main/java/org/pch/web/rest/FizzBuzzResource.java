@@ -8,9 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 @RestController
 @RequestMapping(value = "/")
 public class FizzBuzzResource {
@@ -33,8 +30,8 @@ public class FizzBuzzResource {
   }
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
-  public void root(HttpServletResponse response) throws IOException {
-    response.sendRedirect(REQUEST_FIZZBUZZ);
+  public ResponseEntity<FizzBuzzRes> root() {
+    return fizzbuzzGet(null);
   }
 
 }

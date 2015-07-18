@@ -44,8 +44,6 @@
 ## run tests
 > bash -x src/test/scripts/test.sh
 
-[![codeship - fizzbuzz-api](https://codeship.com/projects/12a96f00-0f9d-0133-d4b2-1e6fe7bb1028/status?branch=master)]
+[![Codeship - Pivotal Web Services - fizzbuzz-api](https://codeship.com/projects/12a96f00-0f9d-0133-d4b2-1e6fe7bb1028/status?branch=master)]
 
-[![Heroku](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&style=flat)]
-
-[![Heroku](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&root=projects.html)]
+[![Heroku - Heroku - fizbuzz-api](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&style=flat)]
