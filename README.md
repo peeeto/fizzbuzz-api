@@ -18,6 +18,8 @@
 ## start heroku remote
 >heroku login
 >
+>git remote add heroku git@heroku.com:fizzbuzz-api.git
+>
 >git push heroku master
 >
 >heroku logs --tail --app fizzbuzz-api
@@ -37,9 +39,9 @@
 >
 >cf push fizzbuzz-api -p target/fizzbuzz-api-1.0.0-SNAPSHOT.jar
 >
->cf logs fizzbuzz-api
->
 >cf apps
+>
+>cf logs fizzbuzz-api
 >
 >[http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444](http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444)
 
