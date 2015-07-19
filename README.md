@@ -13,7 +13,7 @@
 >
 >PORT=8080 foreman start
 >
->[http://localhost:8080/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444]
+>(http://localhost:8080/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444)
 
 ## start heroku remote
 >heroku login
@@ -26,7 +26,7 @@
 >
 >heroku ps --app fizzbuzz-api
 >
->[http://fizzbuzz-api.herokuapp.com/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444]
+>(http://fizzbuzz-api.herokuapp.com/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444)
 
 ## start cloudfoundry remote
 >cf login -a https://api.run.pivotal.io
@@ -41,7 +41,7 @@
 >
 >cf apps
 >
->[http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444]
+>(http://fizzbuzz-api.cfapps.io/fizzbuzz-api/fizzbuzz?numbers=1,15,222;3333|44444)
 
 ## run tests
 > bash -x src/test/scripts/test.sh
