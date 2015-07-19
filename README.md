@@ -1,5 +1,8 @@
 # fizzbuzz-api
 
+[![Codeship - Pivotal Web Services - fizzbuzz-api](https://codeship.com/projects/12a96f00-0f9d-0133-d4b2-1e6fe7bb1028/status?branch=master)]
+[![Heroku - Heroku - fizbuzz-api](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&style=flat)]
+
 ## clone 
 >git clone https://github.com/peeeto/fizzbuzz-api.git
 
@@ -47,7 +50,3 @@
 
 ## run tests
 > bash -x src/test/scripts/test.sh
-
-[![Codeship - Pivotal Web Services - fizzbuzz-api](https://codeship.com/projects/12a96f00-0f9d-0133-d4b2-1e6fe7bb1028/status?branch=master)]
-
-[![Heroku - Heroku - fizbuzz-api](http://heroku-badge.herokuapp.com/?app=fizzbuzz-api&style=flat)]
